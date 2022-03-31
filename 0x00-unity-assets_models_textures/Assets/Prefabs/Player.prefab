@@ -159,13 +159,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abee4b7632b80b14c8f0ee2c5697eb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawn: {x: 0, y: 20, z: 0}
   controller: {fileID: 2013747483}
   speed: 6
   turnSmoothTime: 0.1
   cam: {fileID: 0}
   gravity: -9.81
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 525051840}
   groundDistance: 0.4
   Platforms:
     serializedVersion: 2
     m_Bits: 8
+  jumpHeight: 3
