@@ -56,10 +56,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-# *.apk
-# *.aab
-# *.unitypackage
-# *.app
+# Platformer_Linux_x86_64
 
 # Crashlytics generated file
 crashlytics-build.properties
