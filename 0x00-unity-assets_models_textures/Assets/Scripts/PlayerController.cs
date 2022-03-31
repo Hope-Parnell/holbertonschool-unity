@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 respawn = new Vector3(0f, 20f, 0f);
     public CharacterController controller;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
@@ -21,6 +23,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -20f){
+            transform.position = respawn;
+            return;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, Platforms);
 
         if (isGrounded && velocity.y < 0){
