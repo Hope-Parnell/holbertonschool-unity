@@ -13505,6 +13505,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 1267414630421503997, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1312308539}
     - target: {fileID: 3524541412838040793, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -13555,24 +13559,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
---- !u!1 &1267414630421503996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3781520809597789388, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-  m_PrefabInstance: {fileID: 1267414630421503995}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1267414630421503997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267414630421503996}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e06d36c1f587de7469e6b604a2b821e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 1312308539}
 --- !u!4 &1918938828389271353
 Transform:
   m_ObjectHideFlags: 0
