@@ -15,9 +15,9 @@ public class PortalTeleport : MonoBehaviour
     IEnumerator Teleport()
     {
         player.GetComponent<PlayerController>().enabled = false;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
         player.transform.position = teleportLocation.transform.position;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
         player.GetComponent<PlayerController>().enabled = true;
     }
 }
