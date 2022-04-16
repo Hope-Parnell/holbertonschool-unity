@@ -7,8 +7,9 @@ public class WinTrigger : MonoBehaviour
 {
     public Text TimerText;
     private void OnTriggerEnter(Collider other){
+        other.GetComponent<Timer>().Win();
         other.GetComponent<Timer>().enabled = false;
-        TimerText.color = Color.green;
-        TimerText.fontSize = 60;
+        TimerText.gameObject.SetActive(false);
+        Time.timeScale = 0;
     }
 }

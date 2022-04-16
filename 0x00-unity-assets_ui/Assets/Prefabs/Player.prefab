@@ -185,3 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
+  winTime: {fileID: 0}
+  startTime: 0
+  winCanvas: {fileID: 0}
