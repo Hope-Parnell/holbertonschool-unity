@@ -8,6 +8,7 @@ public class TimerTrigger : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (!other.GetComponent<Timer>().enabled)
+            other.GetComponent<Timer>().startTime = Time.time;
             other.GetComponent<Timer>().enabled = true;
     }
 }
