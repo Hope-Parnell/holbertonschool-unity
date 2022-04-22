@@ -8923,6 +8923,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 577530795965922810, guid: fb8ec43bd6fafa74cbd3b511dca159df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577530795965922810, guid: fb8ec43bd6fafa74cbd3b511dca159df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577530795965922810, guid: fb8ec43bd6fafa74cbd3b511dca159df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3648518248824127381, guid: fb8ec43bd6fafa74cbd3b511dca159df, type: 3}
       propertyPath: m_Name
       value: PauseMenu
