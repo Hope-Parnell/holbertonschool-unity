@@ -2690,7 +2690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033943868872389645, guid: 894c528e23ca9804890a01517d43ee88, type: 3}
       propertyPath: m_Name
-      value: AppyButton
+      value: ApplyButton
       objectReference: {fileID: 0}
     - target: {fileID: 4615320344237145469, guid: 894c528e23ca9804890a01517d43ee88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

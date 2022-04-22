@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2038101703405598123}
   - component: {fileID: 4615320344237145469}
   m_Layer: 5
-  m_Name: AppyButton
+  m_Name: ApplyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
