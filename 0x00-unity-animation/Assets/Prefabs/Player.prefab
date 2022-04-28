@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525051839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -167,13 +167,13 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   cam: {fileID: 0}
   gravity: -9.81
-  groundCheck: {fileID: 525051840}
+  groundCheck: {fileID: 1593284267160221102}
   groundDistance: 0.4
   Platforms:
     serializedVersion: 2
     m_Bits: 8
   jumpHeight: 3
-  animator: {fileID: 0}
+  animator: {fileID: 4682713704929718228}
 --- !u!114 &1267414630421503997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,10 +249,19 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c890757cff2f2dd449b6094805fbb27f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: b3675e19b5f93f94ebbce0b3c82a4a1a, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3675e19b5f93f94ebbce0b3c82a4a1a, type: 3}
 --- !u!4 &1593284267160221102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3675e19b5f93f94ebbce0b3c82a4a1a, type: 3}
+  m_PrefabInstance: {fileID: 1267414629876814405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4682713704929718228 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b3675e19b5f93f94ebbce0b3c82a4a1a, type: 3}
   m_PrefabInstance: {fileID: 1267414629876814405}
   m_PrefabAsset: {fileID: 0}

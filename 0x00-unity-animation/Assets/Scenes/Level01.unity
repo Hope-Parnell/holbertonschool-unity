@@ -10902,11 +10902,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604559308}
   m_Mesh: {fileID: 4300000, guid: b79f6cadd15f0d74189e915531146d3c, type: 3}
---- !u!95 &1617402033 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4682713704929718228, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-  m_PrefabInstance: {fileID: 1267414630421503995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1618462887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13607,10 +13602,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
-    - target: {fileID: 2013747482, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1617402033}
     - target: {fileID: 1267414630421503997, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: winTime
       value: 
@@ -13623,6 +13614,14 @@ PrefabInstance:
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 7811437721599016918}
+    - target: {fileID: 1593284267160221102, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858950015966344751, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3524541412838040793, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -13670,14 +13669,6 @@ PrefabInstance:
     - target: {fileID: 3781520809597789388, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682713704929718228, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682713704929718228, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}

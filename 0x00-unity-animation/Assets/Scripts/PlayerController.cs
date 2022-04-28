@@ -29,7 +29,14 @@ public class PlayerController : MonoBehaviour
             return;
         }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, Platforms);
-
+        if(isGrounded)
+        {
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isJumping", false);
+        }
+        else{
+            animator.SetBool("isFalling", true);
+        }
         if (isGrounded && velocity.y < 0){
             velocity.y = -2f;
         }
@@ -48,7 +55,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
         if (Input.GetButtonDown("Jump") && isGrounded){
-            animator.SetTrigger("isJumping");
+            animator.SetBool("isJumping", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
         velocity.y += gravity * Time.deltaTime;
