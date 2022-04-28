@@ -8456,6 +8456,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6357215175401132138, guid: fa765b317b4868847b11aa5911081a22, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 1312308539}
     - target: {fileID: 6357215175401132139, guid: fa765b317b4868847b11aa5911081a22, type: 3}
       propertyPath: m_Name
       value: WinFlag

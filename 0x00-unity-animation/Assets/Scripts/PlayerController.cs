@@ -20,10 +20,16 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     public float jumpHeight = 3f;
     public Animator animator;
+    private bool gettingUp = false;
+
 
     // Update is called once per frame
     void Update()
     {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Falling Flat Impact") || animator.GetCurrentAnimatorStateInfo(0).IsName("Getting Up"))
+            gettingUp = true;
+        else
+            gettingUp = false;
         if (transform.position.y < -20f){
             transform.position = respawn;
             return;
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        if (direction.magnitude >= 0.1f) {
+        if (direction.magnitude >= 0.1f && !gettingUp) {
             animator.SetBool("isRunning", true);
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,turnSmoothTime);
