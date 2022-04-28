@@ -13614,14 +13614,6 @@ PrefabInstance:
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 7811437721599016918}
-    - target: {fileID: 1593284267160221102, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2858950015966344751, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3524541412838040793, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_RootOrder
       value: 4
