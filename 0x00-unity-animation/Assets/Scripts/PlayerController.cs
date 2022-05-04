@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 3f;
     public Animator animator;
     private bool gettingUp = false;
-    private int fallTime = 0;
-    public int fallThreshold = 600;
+    private float fallTime = 0f;
+    public int fallThreshold = 150;
 
 
     // Update is called once per frame
@@ -41,12 +41,12 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isFalling", false);
             animator.SetBool("isJumping", false);
-            fallTime = 0;
+            fallTime = 0f;
         }
         else{
-            fallTime++;
-            Debug.Log($"{fallTime} > {fallThreshold}: {fallTime > fallThreshold}");
-            if(fallTime > fallThreshold){
+            fallTime+= Time.deltaTime;
+            // Debug.Log($"{fallTime * Time.deltaTime} > {fallThreshold}: {fallTime * Time.deltaTime > fallThreshold}");
+            if(fallTime > fallThreshold * Time.deltaTime){
                 Debug.Log(fallTime);
                 animator.SetBool("isFalling", true);
                 fallTime = 0;

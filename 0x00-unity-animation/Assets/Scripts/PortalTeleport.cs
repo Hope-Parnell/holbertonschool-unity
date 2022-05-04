@@ -6,6 +6,7 @@ public class PortalTeleport : MonoBehaviour
 {
     public GameObject teleportLocation;
     public GameObject player;
+    public Animator animator;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +18,7 @@ public class PortalTeleport : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = false;
         yield return new WaitForSeconds(0.05f);
         player.transform.position = teleportLocation.transform.position;
+        animator.SetBool("isFalling", true);
         yield return new WaitForSeconds(0.05f);
         player.GetComponent<PlayerController>().enabled = true;
     }

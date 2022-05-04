@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1223008693}
   player: {fileID: 1223764778}
+  animator: {fileID: 725080645}
 --- !u!64 &90464393
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -260,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1452701456}
   player: {fileID: 1223764778}
+  animator: {fileID: 0}
 --- !u!64 &114351989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -732,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1760706034}
   player: {fileID: 1223764778}
+  animator: {fileID: 725080645}
 --- !u!64 &450972459
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1004,6 +1007,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48fcd38adb2c89a4a911b713293728ad, type: 3}
   m_PrefabInstance: {fileID: 339554557}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &725080645 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4682713704929718228, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
+  m_PrefabInstance: {fileID: 777600339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &735318840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4014653419097343187, guid: 4a6f24b1f64d79546af2f477ab660452, type: 3}
@@ -1025,6 +1033,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 934373313}
+    - target: {fileID: 2013747482, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
+      propertyPath: fallThreshold
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 220294101402517329, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7763568e-15
@@ -2763,6 +2775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1103306365}
   player: {fileID: 1223764778}
+  animator: {fileID: 725080645}
 --- !u!64 &1093453097
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3296,6 +3309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1452701456}
   player: {fileID: 1223764778}
+  animator: {fileID: 725080645}
 --- !u!1 &1452701456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 48fcd38adb2c89a4a911b713293728ad, type: 3}
@@ -4326,6 +4340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1333823414}
   player: {fileID: 1223764778}
+  animator: {fileID: 725080645}
 --- !u!64 &1904851871
 MeshCollider:
   m_ObjectHideFlags: 0
