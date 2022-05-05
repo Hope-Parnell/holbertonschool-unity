@@ -13608,7 +13608,7 @@ PrefabInstance:
       objectReference: {fileID: 963194228}
     - target: {fileID: 2013747482, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: fallThreshold
-      value: 150
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1267414630421503997, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: winTime

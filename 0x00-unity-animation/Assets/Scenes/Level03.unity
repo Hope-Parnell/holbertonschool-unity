@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 934373313}
     - target: {fileID: 2013747482, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: fallThreshold
-      value: 150
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 220294101402517329, guid: 724389506c4793e409d62de4a0ace1e3, type: 3}
       propertyPath: m_LocalPosition.x

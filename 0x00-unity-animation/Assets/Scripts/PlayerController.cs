@@ -16,15 +16,17 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
-    public LayerMask Platforms;
+    public LayerMask Grounded;
     bool isGrounded;
     public float jumpHeight = 3f;
     public Animator animator;
     private bool gettingUp = false;
-    private float fallTime = 0f;
-    public int fallThreshold = 150;
+    private float groundedYPos;
+    public float fallThreshold = 0.1f;
 
-
+    private void Start() {
+        groundedYPos = transform.position.y;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,26 +34,25 @@ public class PlayerController : MonoBehaviour
             gettingUp = true;
         else
             gettingUp = false;
+
         if (transform.position.y < -20f){
             transform.position = respawn;
             return;
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, Platforms);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, Grounded);
         if(isGrounded)
         {
             animator.SetBool("isFalling", false);
             animator.SetBool("isJumping", false);
-            fallTime = 0f;
+            groundedYPos = transform.position.y;
         }
         else{
-            fallTime+= Time.deltaTime;
-            // Debug.Log($"{fallTime * Time.deltaTime} > {fallThreshold}: {fallTime * Time.deltaTime > fallThreshold}");
-            if(fallTime > fallThreshold * Time.deltaTime){
-                Debug.Log(fallTime);
+            if(transform.position.y < groundedYPos - fallThreshold){
+                Debug.Log("Falling");
                 animator.SetBool("isFalling", true);
-                fallTime = 0;
             }
         }
+        // reset y velocity when not falling
         if (isGrounded && velocity.y < 0){
             velocity.y = -2f;
         }
@@ -69,7 +70,10 @@ public class PlayerController : MonoBehaviour
         else {
             animator.SetBool("isRunning", false);
         }
+        if(Input.GetButtonDown("Jump"))
+            Debug.Log($"Grounded: {isGrounded}, Getting Up: {gettingUp}");
         if (Input.GetButtonDown("Jump") && isGrounded && !gettingUp){
+            Debug.Log("Jumping");
             animator.SetBool("isJumping", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
