@@ -15,11 +15,14 @@ public class PortalTeleport : MonoBehaviour
     }
     IEnumerator Teleport()
     {
+        // disable player movement
         player.GetComponent<PlayerController>().enabled = false;
         yield return new WaitForSeconds(0.05f);
+        // teleport the player
         player.transform.position = teleportLocation.transform.position;
         animator.SetBool("isFalling", true);
         yield return new WaitForSeconds(0.05f);
+        // reenable player movement
         player.GetComponent<PlayerController>().enabled = true;
     }
 }
