@@ -259,9 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30748c9b7d8f06744b8404d27d8c1350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportLocation: {fileID: 1452701456}
+  teleportLocation: {fileID: 1552876924}
   player: {fileID: 1223764778}
-  animator: {fileID: 0}
+  animator: {fileID: 725080645}
 --- !u!64 &114351989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3319,6 +3319,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48fcd38adb2c89a4a911b713293728ad, type: 3}
   m_PrefabInstance: {fileID: 972293641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552876924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1697758212906637116, guid: 48fcd38adb2c89a4a911b713293728ad, type: 3}
+  m_PrefabInstance: {fileID: 1894700098}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1576764408 stripped
 Transform:
