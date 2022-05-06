@@ -23,4 +23,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exited");
         Application.Quit();
     }
+    public void Credits(){
+        SceneManager.LoadScene("Credits");
+    }
+    public void OpenLink(string link){
+        Application.OpenURL(link);
+    }
 }
