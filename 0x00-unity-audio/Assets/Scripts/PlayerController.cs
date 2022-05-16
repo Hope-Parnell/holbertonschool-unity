@@ -16,13 +16,18 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
-    public LayerMask Grounded;
+    public LayerMask Grass;
+    public LayerMask Rock;
     bool isGrounded;
+    bool onGrass;
+    bool onRock;
     public float jumpHeight = 3f;
     public Animator animator;
     private bool gettingUp = false;
     private float groundedYPos;
     public float fallThreshold = 0.1f;
+    public AudioSource grassFootsteps;
+    public AudioSource rockFootsteps;
 
     private void Start() {
         groundedYPos = transform.position.y;
@@ -30,6 +35,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // creates a sphere at selected position with a radius of ground distance and
+        // checks if it collides with an object on the "Grounded" Layer
+        onGrass = Physics.CheckSphere(groundCheck.position, groundDistance, Grass);
+        onRock = Physics.CheckSphere(groundCheck.position, groundDistance, Rock);
+        isGrounded = onGrass || onRock;
+        ApplyPhysics();
+        Movement();
+        playerAudio();
+    }
+    void ApplyPhysics(){
         // check if the falling flat animation or the getting up animation are playing
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Falling Flat Impact") || animator.GetCurrentAnimatorStateInfo(0).IsName("Getting Up"))
             gettingUp = true;
@@ -40,9 +55,6 @@ public class PlayerController : MonoBehaviour
             transform.position = respawn;
             return;
         }
-        // creates a sphere at selected position with a radius of ground distance and
-        // checks if it collides with an object on the "Grounded" Layer
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, Grounded);
         if(isGrounded)
         {
             animator.SetBool("isFalling", false);
@@ -60,6 +72,11 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && velocity.y < 0){
             velocity.y = -2f;
         }
+        // apply gravity to the player
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
+    void Movement(){
         // get inputs using Unity's built in controls
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -89,9 +106,33 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
-
-        // apply gravity to the player
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+    }
+    void playerAudio(){
+        if(animator.GetBool("isRunning")){
+            if (onGrass){
+                if(rockFootsteps.isPlaying)
+                    rockFootsteps.Stop();
+                if (!grassFootsteps.isPlaying)
+                    grassFootsteps.Play();
+            }
+            else if(onRock){
+                if(grassFootsteps.isPlaying)
+                    grassFootsteps.Stop();
+                if (!rockFootsteps.isPlaying)
+                    rockFootsteps.Play();
+            }
+            else {
+                if(grassFootsteps.isPlaying)
+                    grassFootsteps.Stop();
+                if(rockFootsteps.isPlaying)
+                    rockFootsteps.Stop();
+            }
+        }
+        else{
+            if(grassFootsteps.isPlaying)
+                grassFootsteps.Stop();
+            if(rockFootsteps.isPlaying)
+                rockFootsteps.Stop();
+        }
     }
 }
