@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public float fallThreshold = 0.1f;
     public AudioSource grassFootsteps;
     public AudioSource rockFootsteps;
+    public AudioSource rockImpact;
+    public AudioSource grassImpact;
 
     private void Start() {
         groundedYPos = transform.position.y;
@@ -57,7 +59,13 @@ public class PlayerController : MonoBehaviour
         }
         if(isGrounded)
         {
-            animator.SetBool("isFalling", false);
+            if (animator.GetBool("isFalling")){
+                animator.SetBool("isFalling", false);
+                if(onRock)
+                    rockImpact.Play();
+                if(onGrass)
+                    grassImpact.Play();
+            }
             animator.SetBool("isJumping", false);
             groundedYPos = transform.position.y;
         }

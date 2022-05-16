@@ -6,7 +6,14 @@ using UnityEngine.UI;
 public class WinTrigger : MonoBehaviour
 {
     public Text TimerText;
+    public AudioSource BGM;
     private void OnTriggerEnter(Collider other){
+        var pc =other.GetComponent<PlayerController>();
+        if (pc.rockFootsteps.isPlaying)
+            pc.rockFootsteps.Stop();
+        if (pc.grassFootsteps.isPlaying)
+            pc.grassFootsteps.Stop();
+        pc.enabled = false;
         other.GetComponent<Timer>().Win();
         other.GetComponent<Timer>().enabled = false;
         TimerText.gameObject.SetActive(false);
