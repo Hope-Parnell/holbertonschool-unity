@@ -1051,8 +1051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82cba80231ba0248830f7ca3500fc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualsCredits: {fileID: 0}
-  audioCredits: {fileID: 0}
+  visualsCredits: {fileID: 847859849}
+  audioCredits: {fileID: 1100238920}
 --- !u!114 &590966249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1100238921
 RectTransform:
   m_ObjectHideFlags: 0
