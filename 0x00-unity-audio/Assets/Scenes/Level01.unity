@@ -9037,6 +9037,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 684870061, guid: fa765b317b4868847b11aa5911081a22, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6357215175401132134, guid: fa765b317b4868847b11aa5911081a22, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9747,7 +9751,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345427588}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1345427591
 Camera:
   m_ObjectHideFlags: 0
