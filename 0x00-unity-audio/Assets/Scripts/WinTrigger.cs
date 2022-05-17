@@ -8,6 +8,7 @@ public class WinTrigger : MonoBehaviour
     public Text TimerText;
     public AudioSource BGM;
     private void OnTriggerEnter(Collider other){
+        BGM.Stop();
         var pc =other.GetComponent<PlayerController>();
         if (pc.rockFootsteps.isPlaying)
             pc.rockFootsteps.Stop();
