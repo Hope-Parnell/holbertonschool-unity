@@ -28,21 +28,24 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume(){
         Time.timeScale = 1;
-        pauseMenu.SetActive(false);
         unpaused.TransitionTo(0.01f);
+        pauseMenu.SetActive(false);
         isPaused = false;
     }
     public void Restart(){
         Time.timeScale = 1;
+        unpaused.TransitionTo(0.01f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void MainMenu(){
         Time.timeScale = 1;
+        unpaused.TransitionTo(0.01f);
         SceneManager.LoadScene("MainMenu");
     }
     public void Options(){
         Time.timeScale = 1;
         PlayerPrefs.SetString("Prev", SceneManager.GetActiveScene().name);
+        unpaused.TransitionTo(0.01f);
         SceneManager.LoadScene("Options");
     }
 }

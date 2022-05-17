@@ -9,8 +9,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertY;
     public Toggle freeCam;
-    public AudioMixerGroup BGM;
-    public AudioMixerGroup SFX;
+    public AudioMixer mixer;
     public Slider BGMSlider;
     public Slider SFXSlider;
     // Start is called before the first frame update
@@ -34,11 +33,13 @@ public class OptionsMenu : MonoBehaviour
         else{
             PlayerPrefs.SetInt("freeCam", 0);
         }
-
+        BGMSlider.value = PlayerPrefs.GetFloat("BGM", 1f);
+        SFXSlider.value = PlayerPrefs.GetFloat("SFX", 1f);
     }
 
     // Update is called once per frame
     public void Back(){
+        SetVolume();
         SceneManager.LoadScene(PlayerPrefs.GetString("Prev"));
     }
     public void Apply(){
@@ -50,8 +51,36 @@ public class OptionsMenu : MonoBehaviour
             PlayerPrefs.SetInt("freeCam", 1);
         else
             PlayerPrefs.SetInt("freeCam", 0);
+        PlayerPrefs.SetFloat("BGM", BGMSlider.value);
+        PlayerPrefs.SetFloat("BGM", BGMSlider.value);
+        SetVolume();
         SceneManager.LoadScene(PlayerPrefs.GetString("Prev"));
     }
-    public void SetVolume(float volume){
+    public void ChangeBGM(){
+        float volume = LinearToDecibel(BGMSlider.value);
+        mixer.SetFloat("BGMVolume", volume);
+    }
+    public void ChangeSFX(){
+        float volume = LinearToDecibel(SFXSlider.value);
+        mixer.SetFloat("SFXVolume", volume);
+    }
+    private float LinearToDecibel(float linear)
+    {
+        float dB;
+
+        if (linear != 0)
+        {
+            dB = 20.0f * Mathf.Log10(linear);
+        }
+        else
+        {
+            dB = -144.0f;
+        }
+
+        return dB;
+    }
+    private void SetVolume(){
+        mixer.SetFloat("BGMVolume", LinearToDecibel(PlayerPrefs.GetFloat("BGM", 1f)));
+        mixer.SetFloat("SFXVolume", LinearToDecibel(PlayerPrefs.GetFloat("SFX", 1f)));
     }
 }
