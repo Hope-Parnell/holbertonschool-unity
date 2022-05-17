@@ -7428,7 +7428,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   m_Layer: 0
@@ -7438,14 +7437,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -9715,7 +9706,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1345427592}
   - component: {fileID: 1345427591}
-  - component: {fileID: 1345427590}
   - component: {fileID: 1345427589}
   - component: {fileID: 1345427593}
   m_Layer: 0
@@ -9744,14 +9734,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!81 &1345427590
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345427588}
-  m_Enabled: 1
 --- !u!20 &1345427591
 Camera:
   m_ObjectHideFlags: 0
@@ -13307,9 +13289,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 5
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -15685,6 +15667,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8091440678961654093, guid: 7e2053a16235316469c678af43dd17d6, type: 3}
+      propertyPath: nextScene
+      value: Level02
+      objectReference: {fileID: 0}
     - target: {fileID: 8367765823900698244, guid: 7e2053a16235316469c678af43dd17d6, type: 3}
       propertyPath: m_Name
       value: WinMenu
