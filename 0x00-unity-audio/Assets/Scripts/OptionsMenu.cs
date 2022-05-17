@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertY;
     public Toggle freeCam;
+    public AudioMixerGroup BGM;
+    public AudioMixerGroup SFX;
+    public Slider BGMSlider;
+    public Slider SFXSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,5 +51,7 @@ public class OptionsMenu : MonoBehaviour
         else
             PlayerPrefs.SetInt("freeCam", 0);
         SceneManager.LoadScene(PlayerPrefs.GetString("Prev"));
+    }
+    public void SetVolume(float volume){
     }
 }
