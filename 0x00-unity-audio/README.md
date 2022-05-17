@@ -1,5 +1,5 @@
 # 0x00-unity-animation
-Create the third form of a platformer game and learn to work with animations.
+Create the forth and final form of a platformer game and learn to work with audio.
 
 ## Credits
 - [Skyboxes: Farland Skies - Cloudy Crown](https://assetstore.unity.com/packages/2d/textures-materials/sky/farland-skies-cloudy-crown-60004#description)
@@ -14,3 +14,4 @@ Create the third form of a platformer game and learn to work with animations.
 - “Wallpaper”, “Cheery Monday” Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0
 https://creativecommons.org/licenses/by/3.0/
+- Portal Sounds: [Ambient Hum](http://freesoundeffect.net/sound/sci-fi-ambience-100-sound-effect) and [Teleport](http://freesoundeffect.net/sound/sci-fi-portalwarp-402-sound-effect)
