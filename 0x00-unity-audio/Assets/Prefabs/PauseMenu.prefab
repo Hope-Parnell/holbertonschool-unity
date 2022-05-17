@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8156936477600763530}
+  paused: {fileID: 3109772222319368747, guid: 2dc226e011279fa47aa7045dca5c613c, type: 2}
+  unpaused: {fileID: 24500006, guid: 2dc226e011279fa47aa7045dca5c613c, type: 2}
 --- !u!1001 &4363676661129891525
 PrefabInstance:
   m_ObjectHideFlags: 0
