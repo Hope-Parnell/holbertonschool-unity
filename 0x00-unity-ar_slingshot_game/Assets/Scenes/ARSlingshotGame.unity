@@ -333,7 +333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &275393204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1587,6 +1587,8 @@ MonoBehaviour:
   inGameMenu: {fileID: 275393203}
   playAgainButton: {fileID: 1446079340}
   hint: {fileID: 1656115409}
+  target: {fileID: 2642709806277466375, guid: 78f4947d278a0d64ab8242fbfcc3f819, type: 3}
+  maxTargets: 7
 --- !u!1 &1461937215
 GameObject:
   m_ObjectHideFlags: 0

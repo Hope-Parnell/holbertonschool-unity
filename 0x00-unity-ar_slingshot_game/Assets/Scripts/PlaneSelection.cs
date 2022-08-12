@@ -15,7 +15,7 @@ public class PlaneSelection : MonoBehaviour
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private Vector2 touchPos;
     private TrackableId selectionId;
-    private ARPlane selectedPlane = null;
+    public ARPlane selectedPlane = null;
     [SerializeField] Material selected;
     [SerializeField] Material unselected;
     [SerializeField] GameObject startButton;
@@ -23,6 +23,8 @@ public class PlaneSelection : MonoBehaviour
     [SerializeField] GameObject inGameMenu;
     [SerializeField] GameObject playAgainButton;
     [SerializeField] private TMP_Text hint;
+    [SerializeField] GameObject target;
+    [SerializeField] int maxTargets = 7;
     private void Start() {
         hint.text = "Please select your play surface.";
     }
@@ -81,6 +83,14 @@ public class PlaneSelection : MonoBehaviour
         return false;
     }
     void spawnTargets(){
+        for(int i = 0; i < maxTargets; i++){
+            GameObject newTarget = Instantiate(target, selectedPlane.center, Quaternion.identity);
+            var X = selectedPlane.size.x;
+            var Z = selectedPlane.size.y;
+            var x = Random.Range(-X/3, X/3);
+            var z = Random.Range(-Z/3, Z/3);
 
+            newTarget.transform.position = new Vector3(selectedPlane.center.x + x, newTarget.transform.position.y, selectedPlane.center.z + z);
+        }
     }
 }
