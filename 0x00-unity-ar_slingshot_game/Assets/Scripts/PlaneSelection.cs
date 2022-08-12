@@ -29,6 +29,7 @@ public class PlaneSelection : MonoBehaviour
     private void Awake() {
         planeManager = FindObjectOfType<ARPlaneManager>();
         raycastManager = GetComponent<ARRaycastManager>();
+        hint.text = "Please select your play surface.";
    }
     // Update is called once per frame
     private void Update() {
@@ -59,9 +60,15 @@ public class PlaneSelection : MonoBehaviour
     }
     public void playGame(){
         startButton.SetActive(false);
+        inGameMenu.SetActive(true);
+        hint.text = "Pull back to Aim";
+        spawnTargets();
     }
     public void gameRestart(){
         SceneManager.LoadScene(0);
+    }
+    public void quit(){
+        Application.Quit();
     }
     bool getTouchPosition(out Vector2 touchPos){
         if (Input.touchCount > 0)
@@ -71,5 +78,8 @@ public class PlaneSelection : MonoBehaviour
         }
         touchPos = default;
         return false;
+    }
+    void spawnTargets(){
+
     }
 }
