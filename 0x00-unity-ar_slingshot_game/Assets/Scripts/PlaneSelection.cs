@@ -56,6 +56,7 @@ public class PlaneSelection : MonoBehaviour
         raycastManager.enabled = false;
         confirmButton.SetActive(false);
         inGameMenu.SetActive(true);
+        hint.text = "Press Start to Play";
         startButton.SetActive(true);
     }
     public void playGame(){
