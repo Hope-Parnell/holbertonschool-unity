@@ -79,14 +79,15 @@ public class PlaneSelection : MonoBehaviour
             Destroy(target);
         targets.Clear();
         spawnTargets();
+        var scoreKeeper = GameObject.Find("InGameMenu");
+        scoreKeeper.GetComponent<ScoreKeeper>().ResetGame();
         playAgainButton.SetActive(false);
     }
     public void gameRestart(){
         SceneManager.LoadScene(0);
     }
     public void quit(){
-        gameEnd();
-        // Application.Quit();
+        Application.Quit();
     }
     bool getTouchPosition(out Vector2 touchPos){
         if (Input.touchCount > 0)

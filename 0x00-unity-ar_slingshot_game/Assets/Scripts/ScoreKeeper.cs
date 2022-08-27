@@ -12,7 +12,7 @@ public class ScoreKeeper : MonoBehaviour
     public List<GameObject> targets;
     [SerializeField] private GameObject arOrigin;
     [SerializeField] private GameObject ammo;
-    [SerializeField] private float ammoFlyTime = 30;
+    [SerializeField] private float ammoFlyTime = 1f;
     private TMP_Text hint;
     private bool draw = false;
     private GameObject ammoPiece;
@@ -49,7 +49,7 @@ public class ScoreKeeper : MonoBehaviour
             ammoPiece.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
             ammoPiece.transform.rotation = Camera.main.transform.rotation;
         }
-        if ((currentAmmo <= 0 && !ammoInFlight) || targets.Count == 0){
+        if ((currentAmmo <= 0 && !ammoInFlight && !draw) || targets.Count == 0){
             arOrigin.GetComponent<PlaneSelection>().gameEnd();
         }
     }
@@ -61,5 +61,11 @@ public class ScoreKeeper : MonoBehaviour
         yield return new WaitForSeconds(ammoFlyTime);
         Destroy(ammoPiece);
         ammoInFlight = false;
+    }
+    public void ResetGame(){
+        score = 0;
+        scoreText.text = "0";
+        currentAmmo = 7;
+        ammoText.text = "Ammo: " + currentAmmo.ToString() + "/" + ammoTotal.ToString();
     }
 }
