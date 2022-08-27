@@ -5,9 +5,10 @@ using UnityEngine.XR.ARFoundation;
 
 public class TargetBehavior : MonoBehaviour
 {
-    [SerializeField] GameObject arOrigin;
+    private GameObject arOrigin;
     public ARPlane selectedPlane;
     private void Awake() {
+        arOrigin = GameObject.Find("AR Session Origin");
         selectedPlane = arOrigin.GetComponent<PlaneSelection>().selectedPlane;
     }
 }

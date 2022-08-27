@@ -327,6 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275393204}
+  - component: {fileID: 275393205}
   m_Layer: 5
   m_Name: InGameMenu
   m_TagString: Untagged
@@ -358,6 +359,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &275393205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275393203}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d21994b208fdb4dadcd8402342c74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  ammoTotal: 7
+  scoreText: {fileID: 155224371}
+  ammoText: {fileID: 1461937217}
+  targets: []
+  arOrigin: {fileID: 1459660746}
+  ammo: {fileID: 650431584446517924, guid: a445182585d37a74abfef10848ec05b9, type: 3}
 --- !u!1 &347214775
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +525,7 @@ GameObject:
   - component: {fileID: 433088369}
   - component: {fileID: 433088368}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: AmmoBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +602,7 @@ GameObject:
   - component: {fileID: 443251372}
   - component: {fileID: 443251371}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ScoreBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,6 +1174,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &997881183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997881184}
+  m_Layer: 0
+  m_Name: AmmoStartPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &997881184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997881183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1864764629}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1008775058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446079343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459660752}
+        m_TargetAssemblyTypeName: PlaneSelection, Assembly-CSharp
+        m_MethodName: playAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1446079343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1580,6 +1643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b86b06b96bf824994a3819bb34f377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedPlane: {fileID: 0}
+  targets: []
   selected: {fileID: 2100000, guid: 7f39b15336ba3004383bc06840c93f51, type: 2}
   unselected: {fileID: 2100000, guid: abac64bf63bc5814fbc777eaa9a0c7d0, type: 2}
   startButton: {fileID: 621615718}
@@ -1587,7 +1652,7 @@ MonoBehaviour:
   inGameMenu: {fileID: 275393203}
   playAgainButton: {fileID: 1446079340}
   hint: {fileID: 1656115409}
-  target: {fileID: 2642709806277466375, guid: 78f4947d278a0d64ab8242fbfcc3f819, type: 3}
+  targetModel: {fileID: 2642709806277466375, guid: 78f4947d278a0d64ab8242fbfcc3f819, type: 3}
   maxTargets: 7
 --- !u!1 &1461937215
 GameObject:
@@ -1601,7 +1666,7 @@ GameObject:
   - component: {fileID: 1461937218}
   - component: {fileID: 1461937217}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AmmoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2213,7 +2278,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 997881184}
   m_Father: {fileID: 1459660749}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
