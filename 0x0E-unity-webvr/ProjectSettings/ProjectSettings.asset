@@ -135,9 +135,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 11400000, guid: f6ae5d2590a66ec4fba972624bf646d4, type: 2}
-  - {fileID: 4947638023622775882, guid: 31ae973e2111e184882e42468df763df, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -533,7 +531,7 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
-    DESCRIPTION: 
+    DESCRIPTION: Virtual Altar
     WEBXR_POLYFILL_CONFIG: 
   mobileMTRendering:
     Android: 1
@@ -798,10 +796,10 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:WebXR
+  webGLTemplate: PROJECT:WebXRFullView2020
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 1
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
